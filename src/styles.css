@@ -1,0 +1,11 @@
+.message {
+  color: red;
+}
+
+.post {
+  width: 600px;
+}
+
+.image{
+max-width: 100%;
+}
