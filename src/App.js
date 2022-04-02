@@ -3,7 +3,7 @@ import { WelcomeMessage } from "./WelcomeMessage"
 import { Post } from "./Post"
 
 import "./styles.css"
-
+import { Counter } from "./Counter"
 const posts = [
     {
         title: "HELOOOOOOOOOOOOOOOOO",
@@ -28,7 +28,8 @@ const posts = [
 
 
 export const App = () => {
-    return <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+    return <div className="container">
+
         {posts.map(post => <Post title={post.title} imageSrc={post.imageSrc} body={post.body} />)}
     </div>
 
