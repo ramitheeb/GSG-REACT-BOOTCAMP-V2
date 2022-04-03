@@ -11,9 +11,14 @@ const ToDo = () => {
         setToDos([toDo, ...toDos])
     }
 
+    function addTodo(toDo){
+        setToDos([toDo, ...toDos])
+    }
+
+
     return <div>
         <h1>To Do App </h1>
-        <ToDoHeader onToDoAdd={onToDoAdd} />
+        <ToDoHeader addElement={addTodo} />
         {toDos.map(toDo => <ToDoItem title={toDo.title} />)}
         <ToDoFooter />
     </div>

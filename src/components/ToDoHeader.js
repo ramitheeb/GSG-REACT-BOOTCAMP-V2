@@ -2,23 +2,22 @@ import { useState } from "react"
 
 
 const ToDoHeader = (props) => {
-
-    const [title, setTitle] = useState("")
+const [title, setTitle] = useState("")
     const handleTitleChange = (e) => {
         setTitle(e.target.value)
     }
 
-    const handleAddToDo = () => {
-        if (title.length == 0) return
-        const newToDo = {
+    function handleAddToDo(){
+        if (title.length ==0) return;
+        let todo = {
             title: title,
             id: Math.random(),
-            date: new Date()
+            date:new Date()
         }
-        props.onToDoAdd(newToDo)
+        props.addElement(todo)
         setTitle("")
-
     }
+
 
     return <div>
         <input type="text" placeholder="title" value={title} onChange={handleTitleChange} />
