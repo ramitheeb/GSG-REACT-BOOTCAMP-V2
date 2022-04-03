@@ -1,4 +1,6 @@
+import ToDoFooter from "../components/ToDoFooter"
 import ToDoHeader from "../components/ToDoHeader"
+import ToDoItem from "../components/ToDoItem"
 let toDos = [
     {
         title: "bbla aldflsa fsad ",
@@ -26,7 +28,10 @@ const ToDo = () => {
     return <div>
         <h1>To Do App </h1>
         <ToDoHeader />
+        {toDos.map(toDo => <ToDoItem title={toDo.title} />)}
+        <ToDoFooter />
     </div>
+
 }
 
 export default ToDo
