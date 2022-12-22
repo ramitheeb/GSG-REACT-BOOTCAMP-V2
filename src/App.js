@@ -1,28 +1,19 @@
+import About from "./pages/About"
+import Portfolio from "./pages/Portfolio"
+import { Routes, Route, Link } from "react-router-dom";
 
-import { WelcomeMessage } from "./WelcomeMessage"
-import { Post } from "./Post"
-import "./styles.css"
-import { Counter } from "./Counter"
-import { useEffect, useState } from "react"
-
-
-
-
-export const App = () => {
-    const [posts, setPosts] = useState([])
-
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((json) => {
-                setPosts(json)
-            });
-    }, [])
-
-    return <div className="container">
-
-        {posts.map(post => <Post title={post.title} imageSrc={post.imageSrc} body={post.body} />)}
+const App = () => {
+    return <div>
+        <nav >
+            <Link style={{ marginRight: 10 }} to="/">Portfolio</Link>
+            <Link to="/about">About</Link>
+        </nav>
+        <Routes>
+            <Route path="/" element={<Portfolio />} />
+            <Route path="about" element={<About />} />
+        </Routes>
     </div>
 
 }
 
+export default App
